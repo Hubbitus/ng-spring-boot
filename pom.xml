@@ -5,7 +5,11 @@
 	<artifactId>ng-spring-boot</artifactId>
 	<version>1.0.0</version>
 	<name>ng-spring-boot</name>
-	
+	<packaging>war</packaging>
+	<properties>
+		<start-class>be.g00glen00b.Application</start-class>
+	</properties>
+
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
@@ -21,7 +25,7 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
-	
+
 	<build>
 		<plugins>
 			<plugin>
@@ -30,11 +34,17 @@
 			</plugin>
 		</plugins>
 	</build>
-	
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<!-- http://stackoverflow.com/questions/27904594/spring-boot-war-deployed-to-tomcat -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
